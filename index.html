@@ -2,18 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To-Do List Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster | Modern To-Do List</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="todo-app">
-        <h1>My To-Do List</h1>
-        <input type="text" id="task-input" placeholder="Enter a new task">
-        <button id="add-task-btn">Add Task</button>
-        <ul id="task-list">
-            <!-- Tasks will be listed here -->
-        </ul>
+    <div class="container">
+        <div class="todo-app">
+            <!-- Header Section -->
+            <header class="app-header">
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="fas fa-tasks"></i>
+                        <h1>TaskMaster</h1>
+                    </div>
+                    <p class="tagline">Stay organized, boost productivity</p>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="app-content">
+                <!-- Input Section -->
+                <div class="input-container">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-plus-circle icon"></i>
+                            <input 
+                                type="text" 
+                                id="task-input"
+                                placeholder="What needs to be done today?"
+                                autocomplete="off"
+                            >
+                        </div>
+                        <button id="add-task-btn" class="add-btn">
+                            <i class="fas fa-plus"></i>
+                            Add Task
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="total-tasks">0</span>
+                            <span class="stat-label">Total Tasks</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon completed">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="completed-tasks">0</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="pending-tasks">0</span>
+                            <span class="stat-label">Pending</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasks Section -->
+                <div class="tasks-container">
+                    <div class="tasks-header">
+                        <h2><i class="fas fa-list-check"></i> Your Tasks</h2>
+                        <button id="clear-completed" class="clear-btn">
+                            <i class="fas fa-trash"></i> Clear Completed
+                        </button>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="empty-state" class="empty-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>No tasks yet</h3>
+                        <p>Add your first task above to get started!</p>
+                    </div>
+
+                    <!-- Tasks List -->
+                    <ul id="task-list" class="tasks-list">
+                        <!-- Tasks will be dynamically added here -->
+                    </ul>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="app-footer">
+                <p><i class="fas fa-info-circle"></i> Tasks are saved automatically in your browser</p>
+                <p class="copyright">© 2024 TaskMaster | Made with <i class="fas fa-heart"></i></p>
+            </footer>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
